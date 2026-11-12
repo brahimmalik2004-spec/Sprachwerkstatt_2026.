@@ -988,7 +988,15 @@
             const { error: uploadError } = await supabaseClient.storage.from(CV_BUCKET).upload(filePath, file, { contentType: 'application/pdf', upsert: false });
             if (uploadError) throw uploadError;
             const { data: urlData } = supabaseClient.storage.from(CV_BUCKET).getPublicUrl(filePath);
-            const { error: insertError } = await supabaseClient.from(CV_TABLE).insert([{ full_name: name, specialty, diploma, file_path: filePath, file_url: urlData.publicUrl }]);
+
+const { error: insertError } = await supabaseClient.from(CV_TABLE).insert([{
+    full_name: name,
+    specialty: specialty,
+    diploma: diploma,
+    cv_path: filePath,
+    file_path: filePath,
+    file_url: urlData.publicUrl
+}]);
             if (insertError) {
                 await supabaseClient.storage.from(CV_BUCKET).remove([filePath]);
                 throw insertError;
