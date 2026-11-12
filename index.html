@@ -628,6 +628,78 @@
         .cv-public-warning { border-left: 4px solid #f59e0b; background: #fffbeb; color: #92400e; padding: .8rem 1rem; border-radius: .4rem; font-size: .85rem; margin-top: 1rem; }
         @media (max-width: 900px) { .cv-columns { grid-template-columns: 1fr; } .cv-area { padding: 3rem 5%; } }
 
+    
+/* ===== RESPONSIVE MOBILE ===== */
+@media screen and (max-width: 768px) {
+
+  /* Empêcher le décalage horizontal */
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Images adaptatives */
+  img, video, iframe {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Conteneurs */
+  .container, section, .content {
+    max-width: 100%;
+  }
+
+  /* Textes */
+  h1 {
+    font-size: clamp(26px, 7vw, 36px);
+    line-height: 1.2;
+    overflow-wrap: break-word;
+  }
+
+  h2 {
+    font-size: clamp(22px, 5vw, 30px);
+  }
+
+  p {
+    overflow-wrap: break-word;
+  }
+
+  /* Colonnes en une seule colonne */
+  .row, .grid {
+    flex-wrap: wrap;
+  }
+
+  /* Boutons */
+  button, .btn {
+    max-width: 100%;
+  }
+
+  /* Formulaires */
+  input, select, textarea {
+    width: 100%;
+    max-width: 100%;
+    font-size: 16px;
+  }
+
+  /* Tableaux */
+  table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Espacement */
+  section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
     </style>
 </head>
 <body>
